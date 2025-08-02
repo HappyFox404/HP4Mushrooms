@@ -1,0 +1,13 @@
+{
+  "type": "code",
+  "modid": "hp4mushrooms",
+  "name": "HP4Mushrooms",
+  "authors": [
+    "HappyFox404"
+  ],
+  "description": "Adds mushroom farming content for the game.",
+  "version": "1.0.0",
+  "dependencies": {
+    "game": "1.12.20"
+  }
+}

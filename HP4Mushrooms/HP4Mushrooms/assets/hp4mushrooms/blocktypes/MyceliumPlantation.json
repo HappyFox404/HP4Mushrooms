@@ -1,0 +1,40 @@
+{
+  "code": "mycelium-plantation",
+  "entityclass": "mycelium-plantation",
+  "variantgroups": [
+    {
+      "code": "condition",
+      "states": [
+        "base",
+        "infected"
+      ]
+    }
+  ],
+  "creativeinventory": {
+    "general": [
+      "*"
+    ]
+  },
+  "behaviors": [
+    {
+      "name": "behavior-mycelium-plantation"
+    }
+  ],
+  "blockmaterial": "Soil",
+  "resistance": 1.2,
+  "drawtype": "cube",
+  "textures": {
+    "all": {
+      "base": "block/mycelium-plantation-{condition}"
+    }
+  },
+  "sounds": {
+    "place": "game:block/dirt1",
+    "walk": "game:walk/grass1",
+    "break": "game:block/dirt2"
+  },
+  "snowcoverage":true,
+  "drops": [{
+    "type": "block", "code": "mycelium-plantation-base"
+  }]
+}

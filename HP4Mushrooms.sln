@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36310.24 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HP4Mushrooms", "HP4Mushrooms\HP4Mushrooms\HP4Mushrooms.csproj", "{46168DF0-865F-4B80-A3C9-EDBE346BF8AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CakeBuild", "HP4Mushrooms\ZZCakeBuild\CakeBuild.csproj", "{61ECBF05-9BD4-451F-9E65-B46ECE1EEA7E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{46168DF0-865F-4B80-A3C9-EDBE346BF8AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46168DF0-865F-4B80-A3C9-EDBE346BF8AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46168DF0-865F-4B80-A3C9-EDBE346BF8AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46168DF0-865F-4B80-A3C9-EDBE346BF8AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61ECBF05-9BD4-451F-9E65-B46ECE1EEA7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61ECBF05-9BD4-451F-9E65-B46ECE1EEA7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61ECBF05-9BD4-451F-9E65-B46ECE1EEA7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61ECBF05-9BD4-451F-9E65-B46ECE1EEA7E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D791C424-190F-42C8-8000-5479ABF841F8}
+	EndGlobalSection
+EndGlobal

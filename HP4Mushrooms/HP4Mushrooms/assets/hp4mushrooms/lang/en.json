@@ -1,0 +1,5 @@
+{
+  "startup": "startup",
+  "block-mycelium-plantation-base": "Mycelium Plantation",
+  "block-mycelium-plantation-infected": "Infected mycelium plantation"
+}
