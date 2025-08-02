@@ -1,0 +1,41 @@
+﻿{
+  "ingredientPattern": "SPH,PCP,FPF",
+  "enabled": true,
+  "name": "mycelium-plantation",
+  "width": 3,
+  "height": 3,
+  "ingredients": {
+    "C": {
+      "type": "block",
+      "code": "game:soil-high-*",
+      "quantity": 1
+    },
+    "P": {
+      "type": "item",
+      "code": "game:plank-*",
+      "quantity": 8
+    },
+    "F": {
+      "type": "item",
+      "code": "game:flaxtwine",
+      "quantity": 8
+    },
+    "S": {
+      "type": "item",
+      "code": "game:saw-*",
+      "isTool": true,
+      "toolDurabilityCost": 15
+    },
+    "H": {
+      "type": "item",
+      "code": "game:shears-*",
+      "isTool": true,
+      "toolDurabilityCost": 15
+    }
+  },
+  "output": {
+    "type": "block",
+    "code": "mycelium-plantation-base",
+    "quantity": 1
+  }
+}
