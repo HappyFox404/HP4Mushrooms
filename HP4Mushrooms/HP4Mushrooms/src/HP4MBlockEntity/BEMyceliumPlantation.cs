@@ -124,8 +124,8 @@ namespace HP4Mushrooms.HP4MBlockEntity
 
                 if (positions.All(b => !codesMushroom.Select(w => w.Item1).Contains(b.Item1)) && positions.Any(b => b.Item1 == 0))
                 {
-                    var emptyList = positions.Select(b => b.Item1 == 0);
-                    var firstFace = positions[new Random().Next(0, emptyList.Count())];
+                    var emptyList = positions.Where(b => b.Item1 == 0).ToList();
+                    var firstFace = emptyList[new Random().Next(0, emptyList.Count())];
                     var needMushroom = codesMushroom.First(b => b.Item2 == firstFace.Item3);
                     Api.World.BlockAccessor.SetBlock(needMushroom.Item1, firstFace.Item2);
                 }

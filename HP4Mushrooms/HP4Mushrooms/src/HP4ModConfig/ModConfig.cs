@@ -16,11 +16,11 @@ namespace HP4Mushrooms.HP4ModConfig
         /// <summary>
         /// Маскимальное время ожидания перед созданием граба на плантации. (Указывыется в сек) (По умолчанию сутки 48 реальных минут)
         /// </summary>
-        public int MaxWaitSeconds { get; set; } = 10;
+        public int MaxWaitSeconds { get; set; } = 60 * 48 * 4;
         /// <summary>
         /// Минимальное время ожидания перед созданием граба на плантации. (Указывыется в сек) (По умолчанию сутки 48 реальных минут)
         /// </summary>
-        public int MinWaitSeconds { get; set; } = 1;
+        public int MinWaitSeconds { get; set; } = 60 * 48 * 2;
     }
 }
 
