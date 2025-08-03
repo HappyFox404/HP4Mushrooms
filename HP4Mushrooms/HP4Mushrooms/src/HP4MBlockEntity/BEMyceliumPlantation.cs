@@ -42,7 +42,6 @@ namespace HP4Mushrooms.HP4MBlockEntity
         public override void Initialize(ICoreAPI api)
         {
             base.Initialize(api);
-            api.Logger.Notification($"Block config: {Hp4MModConfig.Loaded.MaxWaitSeconds} {Hp4MModConfig.Loaded.MinWaitSeconds}");
             RegisterGameTickListener(OnTick, 1000);
         }
 
@@ -89,6 +88,9 @@ namespace HP4Mushrooms.HP4MBlockEntity
                 return;
             }
             
+            var temperature = Api.World.BlockAccessor.GetClimateAt(Pos, EnumGetClimateMode.ForSuppliedDate_TemperatureOnly, Api.World.Calendar.TotalDays).Temperature;
+            if (temperature < 10 || temperature > 35) return;
+
             if (mushroomBlockType.Code.Path.EndsWith("-normal"))
             {
                 var upBlockPosition = Pos.UpCopy();
@@ -122,7 +124,8 @@ namespace HP4Mushrooms.HP4MBlockEntity
 
                 if (positions.All(b => !codesMushroom.Select(w => w.Item1).Contains(b.Item1)) && positions.Any(b => b.Item1 == 0))
                 {
-                    var firstFace = positions.First(b => b.Item1 == 0);
+                    var emptyList = positions.Select(b => b.Item1 == 0);
+                    var firstFace = positions[new Random().Next(0, emptyList.Count())];
                     var needMushroom = codesMushroom.First(b => b.Item2 == firstFace.Item3);
                     Api.World.BlockAccessor.SetBlock(needMushroom.Item1, firstFace.Item2);
                 }
@@ -156,7 +159,6 @@ namespace HP4Mushrooms.HP4MBlockEntity
             
             if (packetid == (int)EnumMyceliumPlantationPacketId.InfectedPlantation)
             {
-                Api.Logger.Notification("Infected");
                 var packet = SerializerUtil.Deserialize<MyceliumMushroomPacket>(data);
                 var activeSlot = player.InventoryManager.ActiveHotbarSlot;
                 
@@ -165,10 +167,8 @@ namespace HP4Mushrooms.HP4MBlockEntity
                 {
                     block = Api.World.GetBlock(block.CodeWithParts("infected"));
                     Api.World.BlockAccessor.SetBlock(block.BlockId, Pos);
-                    Api.Logger.Notification("Infected Complete");
                 }
 
-                Api.Logger.Notification("SetupMushroom");
                 var blockEntity = Api.World.BlockAccessor.GetBlockEntity<BlockEntityMyceliumPlantation>(Pos);
                 blockEntity._spawnMushroomId = packet.SpawnMushroomId;
                 
@@ -177,7 +177,6 @@ namespace HP4Mushrooms.HP4MBlockEntity
                 MarkDirty(true);
                 
                 Api.World.BlockAccessor.GetChunkAtBlockPos(Pos).MarkModified();
-                Api.Logger.Notification("Complete SetupMushroom");
             }
         }
     }
