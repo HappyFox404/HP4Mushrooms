@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using HP4Mushrooms.HP4ModConfig;
 using ProtoBuf;
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
@@ -24,11 +25,6 @@ namespace HP4Mushrooms.HP4MBlockEntity
 
     public class BlockEntityMyceliumPlantation : Vintagestory.API.Common.BlockEntity
     {
-        //private const int MAX_WAIT_SECONDS = 60 * 60 * 2;
-        //private const int MIN_WAIT_SECONDS = 60 * 24;
-        private const int MaxWaitSeconds = 10;
-        private const int MinWaitSeconds = 1;
-
         private Guid _idBlock = Guid.NewGuid();
         private int _waitSeconds = 0;
         private int _currentWaitSeconds = 0;
@@ -38,7 +34,7 @@ namespace HP4Mushrooms.HP4MBlockEntity
             get {
                 if (_waitSeconds != 0) return _waitSeconds;
                 var rnd = new Random();
-                _waitSeconds = rnd.Next(MinWaitSeconds, MaxWaitSeconds);
+                _waitSeconds = rnd.Next(Hp4MModConfig.Loaded.MinWaitSeconds, Hp4MModConfig.Loaded.MaxWaitSeconds);
                 return _waitSeconds; 
             }
         }
@@ -46,6 +42,7 @@ namespace HP4Mushrooms.HP4MBlockEntity
         public override void Initialize(ICoreAPI api)
         {
             base.Initialize(api);
+            api.Logger.Notification($"Block config: {Hp4MModConfig.Loaded.MaxWaitSeconds} {Hp4MModConfig.Loaded.MinWaitSeconds}");
             RegisterGameTickListener(OnTick, 1000);
         }
 
