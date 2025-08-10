@@ -1,17 +1,17 @@
 ﻿using System;
-using System.Net.NetworkInformation;
-using HP4Mushrooms.HP4MBlockBehavior;
-using HP4Mushrooms.HP4MBlockEntity;
-using HP4Mushrooms.HP4ModConfig;
+using HappyPack.HPBlockBehavior;
+using HappyPack.HPBlockEntity;
+using HappyPack.HPModConfig;
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
 using Vintagestory.API.Config;
 using Vintagestory.API.Server;
 
-namespace HP4Mushrooms
+namespace HappyPack
 {
-    public class Hp4MushroomsModSystem : ModSystem
+    public class HappyPackModSystem : ModSystem
     {
+
         private ICoreServerAPI _serverApi;
         private IServerNetworkChannel _serverChannel;
         
@@ -94,5 +94,6 @@ namespace HP4Mushrooms
                 _serverApi.Logger.Warning(new Exception($"Error send sync mod config settings to client: {player.ClientId}", e));
             }
         }
+
     }
 }

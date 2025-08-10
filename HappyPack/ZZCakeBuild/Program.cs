@@ -26,7 +26,7 @@ namespace CakeBuild
 
     public class BuildContext : FrostingContext
     {
-        public const string ProjectName = "HP4Mushrooms";
+        public const string ProjectName = "HappyPack";
         public string BuildConfiguration { get; }
         public string Version { get; }
         public string Name { get; }

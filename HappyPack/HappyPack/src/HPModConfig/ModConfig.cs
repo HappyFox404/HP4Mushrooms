@@ -1,6 +1,6 @@
 ﻿using ProtoBuf;
 
-namespace HP4Mushrooms.HP4ModConfig
+namespace HappyPack.HPModConfig
 {
     [ProtoContract(ImplicitFields = ImplicitFields.AllPublic)]
     public class SyncClientConfigPacket
@@ -11,7 +11,7 @@ namespace HP4Mushrooms.HP4ModConfig
 
     public class Hp4MModConfig
     {
-        public static Hp4MModConfig Loaded { get; set; } = new Hp4MModConfig();
+        public static Hp4MModConfig Loaded { get; set; } = new();
         
         /// <summary>
         /// Маскимальное время ожидания перед созданием граба на плантации. (Указывыется в сек) (По умолчанию сутки 48 реальных минут)

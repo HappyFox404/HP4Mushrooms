@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using HP4Mushrooms.HP4ModConfig;
+using HappyPack.HPModConfig;
 using ProtoBuf;
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
@@ -9,7 +9,7 @@ using Vintagestory.API.Datastructures;
 using Vintagestory.API.MathTools;
 using Vintagestory.API.Util;
 
-namespace HP4Mushrooms.HP4MBlockEntity
+namespace HappyPack.HPBlockEntity
 {
     [ProtoContract]
     public class MyceliumMushroomPacket
@@ -23,7 +23,7 @@ namespace HP4Mushrooms.HP4MBlockEntity
         InfectedPlantation = 1000
     }
 
-    public class BlockEntityMyceliumPlantation : Vintagestory.API.Common.BlockEntity
+    public class BlockEntityMyceliumPlantation : BlockEntity
     {
         private Guid _idBlock = Guid.NewGuid();
         private int _waitSeconds = 0;
@@ -71,9 +71,9 @@ namespace HP4Mushrooms.HP4MBlockEntity
         public override void FromTreeAttributes(ITreeAttribute tree, IWorldAccessor worldAccessForResolve)
         {
             base.FromTreeAttributes(tree, worldAccessForResolve);
-            _currentWaitSeconds = tree.GetInt("currentWaitSeconds", 0);
-            _waitSeconds = tree.GetInt("waitSeconds", 0);
-            _spawnMushroomId = tree.GetInt("spawnMushroomId", 0);
+            _currentWaitSeconds = tree.GetInt("currentWaitSeconds");
+            _waitSeconds = tree.GetInt("waitSeconds");
+            _spawnMushroomId = tree.GetInt("spawnMushroomId");
             _idBlock = Guid.Parse(tree.GetString("idBlock", Guid.NewGuid().ToString()));
         }
 

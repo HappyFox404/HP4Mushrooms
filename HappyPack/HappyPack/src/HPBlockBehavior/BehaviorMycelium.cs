@@ -1,7 +1,7 @@
-﻿using HP4Mushrooms.HP4MBlockEntity;
+﻿using HappyPack.HPBlockEntity;
 using Vintagestory.API.Common;
 
-namespace HP4Mushrooms.HP4MBlockBehavior;
+namespace HappyPack.HPBlockBehavior;
 
 public class BehaviorMycelium : BlockBehavior
 {
